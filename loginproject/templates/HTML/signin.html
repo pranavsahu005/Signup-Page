@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'CSS/signin.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Monoton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Michroma&family=Monoton&display=swap" rel="stylesheet">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="body">
+        <video autoplay muted loop playsinline>
+            <source src="{% static '/VEDIO/signin.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="box1 box">
+        <h1>Welcome </h1>
+        <form class="signin-form">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button type="submit">Sign In</button>
+        </form>
+        <div class="social-login">
+            <p>OR Sign In by</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
+        </div>
+        <div class="signup-link">
+            <p>Don't have an account?</p><a href="{% url 'signup' %}"><button>SignUp</button></a>
+        </div>
+
+        <div class="box2 box">
+        <h1>References by <br>WEAR TOME</br>
+    </div>
+    
+    </div>
+
+    <div class="box3">
+        <div class="box3_vedio">
+            <video autoplay muted loop playsinline>
+                <source src="{% static '/VEDIO/signin.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+        <div class="box3_overlay">
+            <div class="names">Co. Pranav, Mahendra, Vaikunth, Sujata</div>
+            <div class="date-icon">
+                <span>11 July 2025</span>
+                <span>🚀</span>
+            </div>
+            <div class="presented">Presented by Sunny Institute</div>
+               <div class="box4 box"><img src="{% static '/IMAGES/signinimg.jpeg' %}" alt="">
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius culpa aspernatur ut consequatur! Distinctio animi doloremque aliquam. Ratione impedit minus vero quos mollitia veniam ad laboriosam fuga explicabo vitae temporibus, nisi voluptas corrupti quam labore, a distinctio. Consectetur possimus enim quibusdam voluptatum itaque hic obcaecati, iusto vitae deleniti beatae culpa vel accusantium. Vero aut a dolores ullam nisi! Esse, natus?</p> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
