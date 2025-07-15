@@ -16,7 +16,41 @@ body {
     position: absolute;
     object-fit: cover;
     z-index: -1;
-
+}
+.menu {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  font-size: 0.9rem;
+  top: 30px;
+    left: 8%;
+    width: 75%;
+    position: absolute;
+    z-index: 10;
+    color: #fff;
+    font-family: 'Michroma', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.164);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+}
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.7;
+}
+.menu a:hover {
+  opacity: 1;
+}
+.menu:hover {
+  background: rgba(243, 240, 240, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
 }
 
 .box {
@@ -47,13 +81,37 @@ body {
     margin-top: 20px;
 }
 
-.signin-form input ,.signup-form input {
+.signin-form input {
+    position: relative;
     padding: 10px;
     border: none;
     border-radius: 5px;
     background-color: #f5f5f5;
      text-align: center;
+     background: rgba(252, 250, 250, 0.507);
+    color: rgb(63, 60, 60);
+    width: 400px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    left: -10px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 2px solid rgba(3, 12, 92, 0.5);
 }
+.signin-form input:hover {
+    transition: border-bottom 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.767); /* Slightly darker on hover */
+    color: rgb(63, 60, 60);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: brightness(1.05);
+    transition: 0.3s ease-in-out;
+    border-radius: 3px;
+} 
 
 .signin-form button , .signup-link button, .signup-form button {
     position: relative;
@@ -73,6 +131,14 @@ body {
     font-size: 15px;
     letter-spacing: 5px;
 }
+.signin-form button:hover, .signup-form button:hover ,.signup-link button:hover {
+    background-color: rgba(73, 42, 247, 0.925);
+    filter: brightness(1.2);
+    box-shadow: inset -50px -20px 50px rgba(4, 33, 255, 0.8),
+                inset 30px 30px 70px rgba(158, 158, 167, 0.5);
+    transition: 0.4s ease, box-shadow 0.3s ease;
+    filter: brightness(1);
+}
 .signup-link p ,.social-login p ,.signup-form p{ 
     color: #f5f5f5;
     word-spacing: 10px;
@@ -86,6 +152,7 @@ body {
     text-align: center;
     padding: 5px;
 }
+
 .social-login p{
     top: -40px;
     left: 265px;
@@ -114,17 +181,26 @@ body {
     border-radius: 50%;
     cursor: pointer;
 }
-.box1 h1 {
-    color: #3b3bff;
-    font-family: "Michroma", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
+.social-login img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1) contrast(1.2);
 }
-.signin-form input:hover {
-    outline: none;
-    border: 2px solid #3b3bff;
+.box1 h1 {
+    color: #eef1fa;
     text-align: center;
+    font-size: 36px;
+    top: -40px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 4px 6px rgba(25, 79, 226, 0.5));
+    font-family: "Michroma", sans-serif;
+    letter-spacing: 4px;
+    font-weight: 100;
+    font-style: normal;
+    margin-bottom: 20px;
 }
 
 .box2 {
@@ -132,14 +208,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    top: 605px;
-    background-color: rgba(124, 176, 245, 0.56);
+    height: 140px;
+    top: 600px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 34, 247, 0.322);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     width: 99%;
 }
 
 .box2 h1 {
+    font-size: 1.6em;
+    text-align: center;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 2px 2px 4px rgba(194, 187, 187, 0.5);
+    letter-spacing: 2px;
+    font-weight: 100;
     color: white;
       font-family: "Bruno Ace SC", sans-serif;
   font-weight: 100;
@@ -239,7 +327,7 @@ body {
     transition: 1s ease-in-out;
 }
 
-.box1:hover{
+.box1:hover   {
     filter: brightness(1) saturate(1.2) contrast(1.3) blur(0px);
     transition: filter 0.3s ease-in-out;
     transition: 0.5s ease-in-out;

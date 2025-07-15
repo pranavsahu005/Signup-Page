@@ -22,7 +22,7 @@
 
     <div class="left-panel">
   <div class="logo">
-    <span class="icon">🔺</span>
+    <span class="icon"><a href="https://wear-tome.blinkstore.ai/"><img src="{% static 'IMAGES/wear tome (1).ico' %}" alt=""></a></span>
     <span class="brand-name">WEAR TOME</span>
   </div>
   <h2>Don't have an account?</h2>
@@ -38,6 +38,10 @@
   </div>
 </div>
     <div class="box1 box">
+         <nav class="menu1">
+              <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'signin' %}">Sign In</a>
+        </nav>
         <h1>Welcome </h1>
         <form class="signup-form">
             <div class="blur"></div>
@@ -61,7 +65,7 @@
         <div class="social-login1">
             <div class="icons"> 
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+               <a href="https://www.instagram.com/wear_tome/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> </a>
                 <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
             </div>
         </div>
