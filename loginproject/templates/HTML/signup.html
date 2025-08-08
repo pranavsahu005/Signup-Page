@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="stylesheet" href="{% static 'CSS/signin.css' %}">
-   <link rel="stylesheet" href="{% static 'CSS/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/signin.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/signup.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Monoton&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Michroma&family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Michroma&family=Monoton&display=swap" rel="stylesheet">
     <title>Sign Up</title>
 </head>
 <body>
@@ -17,46 +17,58 @@
         <video autoplay muted loop playsinline>
             <source src="{% static 'VEDIO/garden-of-words-ruuduurl-5anwqbvb_uMaB5gPK.mp4' %}" type="video/mp4">
         </video>
-        
     </div>
 
     <div class="left-panel">
-  <div class="logo">
-    <span class="icon"><a href="https://wear-tome.blinkstore.ai/"><img src="{% static 'IMAGES/wear tome (1).ico' %}" alt=""></a></span>
-    <span class="brand-name">WEAR TOME</span>
-  </div>
-  <h2>Don't have an account?</h2>
-  <p class="description">
-    Register to access all the features of our service.<br>
-    Manage your business in one place. It's free!
-  </p>
-  <div class="social-icons">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="VK">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Google+">
-  </div>
-</div>
+        <div class="logo">
+            <span class="icon"><a href="https://wear-tome.blinkstore.ai/"><img src="{% static 'IMAGES/wear tome (1).ico' %}" alt=""></a></span>
+            <span class="brand-name">WEAR TOME</span>
+        </div>
+        <h2>Don't have an account?</h2>
+        <p class="description">
+            Register to access all the features of our service.<br>
+            Manage your business in one place. It's free!
+        </p>
+        <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="VK">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Google+">
+        </div>
+    </div>
     <div class="box1 box">
-         <nav class="menu1">
-              <a href="{% url 'home' %}">Home</a>
+        <nav class="menu1">
+            <a href="{% url 'home' %}">Home</a>
             <a href="{% url 'signin' %}">Sign In</a>
         </nav>
         <h1>Welcome </h1>
-        <form class="signup-form">
-            <div class="blur"></div>
-            <input type="email" placeholder="Email">
-            <input type="number" placeholder="contact">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
 
-         <p>Select any one question </p> <select>
+        <form class="signup-form" method="post">
+            {% csrf_token %}
+            <div class="blur"></div>
+            
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="contact" placeholder="Contact" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="s_password" placeholder="Password" required>
+            <input type="password" name="c_password" placeholder="Confirm Password" required>
+
+            <p>Select any one question </p> 
+            <select name="security_question">
                 <option value="petname">Your First Pet Name ?</option>
                 <option value="birthplace">Your Birthplace ?</option>
                 <option value="vehicle number">Your Vehicle Number ?</option>
                 <option value="favourite food">Your Favourite Food ?</option>
-                </select>
-            <input type="text" placeholder="Answer">
+            </select>
+            <input type="text" name="security_answer" placeholder="Answer" required>
 
             <button type="submit">Sign Up</button>
             <p>OR Sign Up by</p>
@@ -65,14 +77,14 @@
         <div class="social-login1">
             <div class="icons"> 
                 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-               <a href="https://www.instagram.com/wear_tome/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> </a>
+                <a href="https://www.instagram.com/wear_tome/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> </a>
                 <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
             </div>
         </div>
     </div>
 
     <div class="box2 box">
-        <h1>References by <br>WEAR TOME</br>
+        <h1>References by <br>WEAR TOME</br></h1>
     </div>
 
 </body>
